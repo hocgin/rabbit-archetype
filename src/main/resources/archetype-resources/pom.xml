@@ -23,10 +23,10 @@
         <main-class/>
 
         <boot-dependencies.version>1.0.1</boot-dependencies.version>
-        <maven-compiler-plugin.version>3.6.0</maven-compiler-plugin.version>
-
         <mapstruct.version>1.4.1.Final</mapstruct.version>
         <lombok.version>1.18.8</lombok.version>
+
+        <maven-compiler-plugin.version>3.6.0</maven-compiler-plugin.version>
     </properties>
 
     <modules>
@@ -52,7 +52,7 @@
             <dependency>
                 <groupId>in.hocg</groupId>
                 <artifactId>boot-dependencies</artifactId>
-                <version>${rabbit-dependencies.version}</version>
+                <version>${boot-dependencies.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
