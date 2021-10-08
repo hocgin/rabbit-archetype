@@ -22,7 +22,7 @@
         <java.target.version>8</java.target.version>
         <main-class/>
 
-        <rabbit-dependencies.version>1.0.0</rabbit-dependencies.version>
+        <boot-dependencies.version>1.0.1</boot-dependencies.version>
         <maven-compiler-plugin.version>3.6.0</maven-compiler-plugin.version>
 
         <mapstruct.version>1.4.1.Final</mapstruct.version>
@@ -50,8 +50,8 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>in.hocg.rabbit</groupId>
-                <artifactId>rabbit-dependencies</artifactId>
+                <groupId>in.hocg</groupId>
+                <artifactId>boot-dependencies</artifactId>
                 <version>${rabbit-dependencies.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
