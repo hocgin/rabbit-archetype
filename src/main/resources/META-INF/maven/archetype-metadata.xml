@@ -5,16 +5,41 @@
                       xsi:schemaLocation="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0 http://maven.apache.org/xsd/archetype-descriptor-1.1.0.xsd">
 
     <requiredProperties>
+        <!-- 团队名称 -->
         <requiredProperty key="groupId">
             <defaultValue>in.hocg.rabbit</defaultValue>
         </requiredProperty>
-        <requiredProperty key="artifactId">
-            <defaultValue>rabbit-tpl</defaultValue>
+        <!-- 服务后缀 -->
+        <requiredProperty key="suffix">
+            <defaultValue>tpl</defaultValue>
         </requiredProperty>
+        <!-- 构件名称 -->
+        <requiredProperty key="artifactId">
+            <defaultValue>rabbit-${suffix}</defaultValue>
+        </requiredProperty>
+        <!-- in.hocg.rabbit.扩展包名 -->
         <requiredProperty key="package">
-            <defaultValue>in.hocg.rabbit</defaultValue>
+            <defaultValue>${groupId}.${suffix}</defaultValue>
+        </requiredProperty>
+        <!-- 不提供输入 -->
+        <requiredProperty key="suffixClass">
+            <defaultValue>${suffix.toLowerCase().substring(0,1).toUpperCase()}${suffix.substring(1)}</defaultValue>
         </requiredProperty>
     </requiredProperties>
+
+    <fileSets>
+        <fileSet encoding="UTF-8">
+            <directory/>
+            <includes>
+                <include>.gitignore</include>
+                <include>*</include>
+                <include>.mvn/**</include>
+            </includes>
+            <excludes>
+                <exclude>pom.xml</exclude>
+            </excludes>
+        </fileSet>
+    </fileSets>
 
     <modules>
         <module id="${rootArtifactId}-api" name="${rootArtifactId}-api" dir="__rootArtifactId__-api">
@@ -93,9 +118,6 @@
                     <includes>
                         <include>**/*.*</include>
                     </includes>
-                    <excludes>
-                        <exclude>*.yml</exclude>
-                    </excludes>
                 </fileSet>
                 <fileSet encoding="UTF-8">
                     <directory>src/test/resources</directory>

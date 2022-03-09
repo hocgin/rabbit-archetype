@@ -22,9 +22,12 @@
         <java.target.version>8</java.target.version>
         <main-class/>
 
-        <boot-dependencies.version>1.0.1</boot-dependencies.version>
+        <boot-dependencies.version>1.0.31</boot-dependencies.version>
         <mapstruct.version>1.4.1.Final</mapstruct.version>
         <lombok.version>1.18.8</lombok.version>
+        <mybatis-plus.version>3.3.0</mybatis-plus.version>
+        <spring-boot-admin-starter.version>2.3.1</spring-boot-admin-starter.version>
+        <velocity-engine-core.version>2.2</velocity-engine-core.version>
 
         <maven-compiler-plugin.version>3.6.0</maven-compiler-plugin.version>
     </properties>
@@ -40,18 +43,15 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
+            <version>${lombok.version}</version>
         </dependency>
     </dependencies>
 
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>in.hocg</groupId>
-                <artifactId>boot-dependencies</artifactId>
+                <groupId>in.hocg.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
                 <version>${boot-dependencies.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
@@ -70,6 +70,31 @@
                 <groupId>${project.groupId}</groupId>
                 <artifactId>${artifactId}-start</artifactId>
                 <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct</artifactId>
+                <version>${mapstruct.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-generator</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-generator</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.velocity</groupId>
+                <artifactId>velocity-engine-core</artifactId>
+                <version>${velocity-engine-core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-starter-client</artifactId>
+                <version>${spring-boot-admin-starter.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

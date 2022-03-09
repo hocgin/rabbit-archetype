@@ -1,3 +1,5 @@
+#set( $symbol_dollar = '$' )
+
 server:
   port: 21000
 logging:
@@ -5,8 +7,8 @@ logging:
     in.hocg: debug
   config: classpath:log4j2-boot-local.xml
   file:
-    path: /data/logs/app/${spring.application.name:unknown}
-    name: ${logging.file.path}/${spring.application.name:unknown}.log
+    path: /data/logs/app/${symbol_dollar}{spring.application.name:unknown}
+    name: ${symbol_dollar}{logging.file.path}/${symbol_dollar}{spring.application.name:unknown}.log
   pattern:
     level: '%5p [%X{X-B3-TraceId},%X{X-B3-SpanId},%X{X-Span-Export}]'
 spring:
@@ -16,16 +18,16 @@ spring:
     nacos:
       config:
         contextPath: /nacos
-        password: ${NACOS_PASSWORD}
-        server-addr: ${NACOS_HOST}
-        username: ${NACOS_USERNAME}
+        password: ${symbol_dollar}{NACOS_PASSWORD}
+        server-addr: ${symbol_dollar}{NACOS_HOST}
+        username: ${symbol_dollar}{NACOS_USERNAME}
         file-extension: yaml
-        namespace: ${NACOS_NAMESPACE}
+        namespace: ${symbol_dollar}{NACOS_NAMESPACE}
       discovery:
-        password: ${NACOS_PASSWORD}
-        server-addr: ${NACOS_HOST}
-        username: ${NACOS_USERNAME}
-        namespace: ${NACOS_NAMESPACE}
+        password: ${symbol_dollar}{NACOS_PASSWORD}
+        server-addr: ${symbol_dollar}{NACOS_HOST}
+        username: ${symbol_dollar}{NACOS_USERNAME}
+        namespace: ${symbol_dollar}{NACOS_NAMESPACE}
 management:
   endpoints:
     web:
